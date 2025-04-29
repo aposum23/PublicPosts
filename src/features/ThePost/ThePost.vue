@@ -16,7 +16,7 @@ import LoadedHeader from "@/shared/LoadedHeader";
 
 <style lang="scss" scoped>
 .post-container {
-  background: var(--aditional-cool-wave);
+  background: var(--aditional-sky-bolt);
   width: 90%;
   display: flex;
   flex-direction: column;

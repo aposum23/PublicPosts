@@ -16,7 +16,7 @@
     --aditional-fresh-mint: #62DA97;
 }
 
-span, p {
+span, p, input, textarea {
     color: var(--aditional-mint-flash);
 }
 
