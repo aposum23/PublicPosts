@@ -36,12 +36,12 @@ const goBack = () => {
   justify-content: end;
   gap: 15px;
   width: 90%;
+  margin: 15px 0;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px 0;
 }
 </style>
