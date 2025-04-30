@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const emit = defineEmits<{
   pageSelection: [number]
 }>();
@@ -15,17 +16,15 @@ const pageSelectionHandler = (page: number): void => {
 
 <template>
   <div class="paginator-container">
-    <div class="paginator-pages">
-      <template v-for="page in count">
-        <div
-            class="page-number"
-            :class="{'selected-page': page === currentPage}"
-            @click="() => pageSelectionHandler(page)"
-        >
-          <span>{{page}}</span>
-        </div>
-      </template>
-    </div>
+    <template v-for="page in count">
+      <div
+          class="page-number"
+          :class="{'selected-page': page === currentPage}"
+          @click="() => pageSelectionHandler(page)"
+      >
+        <span>{{page}}</span>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -34,14 +33,7 @@ const pageSelectionHandler = (page: number): void => {
   &-container {
     display: flex;
     justify-content: center;
-  }
-
-  &-pages {
-    display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 31.5rem;
-    overflow-x: auto;
     gap: 1rem;
   }
 }

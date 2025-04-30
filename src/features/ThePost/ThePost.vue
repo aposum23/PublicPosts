@@ -23,11 +23,12 @@ const props = defineProps<{
 .post-container {
   background: var(--aditional-sky-bolt);
   width: 90%;
+  height: calc(10rem + 20px);
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 10px;
-  justify-content: center;
+  justify-content: start;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -37,12 +38,12 @@ const props = defineProps<{
 }
 
 .post-header {
-  height: 2rem;
+  min-height: 2rem;
 }
 
 .post-content {
   display: flex;
-  height: 8rem;
+  max-height: 8rem;
   margin: 0;
 }
 </style>

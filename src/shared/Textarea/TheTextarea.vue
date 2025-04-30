@@ -25,7 +25,7 @@ const props = defineProps<{
   width: 80%;
 
   & textarea {
-    width: 90%;
+    width: 85%;
     border-radius: 6px;
     background: var(--aditional-cool-wave);
     outline: none;
