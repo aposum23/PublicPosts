@@ -5,12 +5,24 @@ import {ref} from "vue";
 import type {IPost} from "@/utils/types/postTypes.ts";
 import {useRouter} from "vue-router";
 
-const posts = ref<IPost[]>([{}]);
+const posts = ref<IPost[]>([{
+  title: 'asdf',
+  body: 'asdf',
+  userId: 1,
+  id: 1
+}]);
 
 const router = useRouter();
 
-const goToCreateRecord = () => {
+const goToCreateRecord = (): void => {
   router.push('add-new');
+}
+
+const openPostPage = (recordId: number): void => {
+  router.push({
+    name: 'readPost',
+    params: {recordId: recordId}
+  })
 }
 </script>
 
@@ -20,7 +32,7 @@ const goToCreateRecord = () => {
       <Button label="Добавить" @click="goToCreateRecord"/>
     </div>
     <template v-for="post of posts">
-      <PostsList />
+      <PostsList @click="() => openPostPage(post.id)"/>
     </template>
   </div>
 </template>
