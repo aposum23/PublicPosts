@@ -32,6 +32,10 @@ const props = defineProps<{
   cursor: pointer;
 }
 
+.post-container:hover {
+  outline: 1px solid var(--aditional-cool-wave);
+}
+
 .post-header {
   height: 2rem;
 }
