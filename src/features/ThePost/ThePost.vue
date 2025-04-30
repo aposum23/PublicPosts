@@ -1,15 +1,20 @@
 <script setup lang="ts">
 import LoadedText from "@/shared/LoadedText";
 import LoadedHeader from "@/shared/LoadedHeader";
+
+const props = defineProps<{
+  title: string,
+  body: string
+}>();
 </script>
 
 <template>
   <div class="post-container">
     <div class="post-header">
-      <LoadedHeader :header="''"/>
+      <LoadedHeader :header="title"/>
     </div>
     <div class="post-content">
-      <LoadedText :text="''"/>
+      <LoadedText :text="body"/>
     </div>
   </div>
 </template>

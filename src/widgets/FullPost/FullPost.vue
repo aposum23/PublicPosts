@@ -1,15 +1,26 @@
 <script setup lang="ts">
 import LoadedText from "@/shared/LoadedText";
 import LoadedHeader from "@/shared/LoadedHeader";
+import {useRoute} from "vue-router";
+import {onMounted, ref} from "vue";
+import {getRecord} from "@/widgets/FullPost/api/getRecord.ts";
+import type {IPost} from "@/utils/types/postTypes.ts";
+
+const route = useRoute();
+const record = ref<IPost>({});
+
+onMounted(() => {
+  getRecord(route.params.recordId).then(({data}) => record.value = data);
+});
 </script>
 
 <template>
   <div class="post-container">
     <div class="post-header">
-      <LoadedHeader :header="''"/>
+      <LoadedHeader :header="record.title"/>
     </div>
     <div class="post-content">
-      <LoadedText :text="''"/>
+      <LoadedText :text="record.body"/>
     </div>
   </div>
 </template>
