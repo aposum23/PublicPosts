@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FullPost from "@/features/FullPost/FullPost.vue";
+import FullPost from "@/widgets/FullPost/FullPost.vue";
 import Button from "@/shared/Button";
 import {useRouter} from "vue-router";
 

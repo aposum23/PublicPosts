@@ -4,6 +4,7 @@ import Button from "@/shared/Button";
 import {ref} from "vue";
 import type {IPost} from "@/utils/types/postTypes.ts";
 import {useRouter} from "vue-router";
+import {createNewRecord} from "@/pages/AddNewRecordPage/api/createNewRecord.ts";
 
 const formData = ref<IPost>({
   title: '',
@@ -11,7 +12,7 @@ const formData = ref<IPost>({
   userId: 1
 })
 const saveFormData = () => {
-  console.log('Данные сохранены', formData.value);
+  createNewRecord(formData.value).then(() => goBack());
 }
 
 const router = useRouter();
@@ -26,7 +27,7 @@ const goBack = () => {
       <Button label="Назад" @click="goBack"/>
       <Button label="Сохранить" @click="saveFormData"/>
     </div>
-    <PostCreatingForm />
+    <PostCreatingForm v-model="formData"/>
   </div>
 </template>
 
