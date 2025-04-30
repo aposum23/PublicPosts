@@ -1,32 +1,32 @@
 <script setup lang="ts">
-import PostsList from "@/widgets/PostsList";
+import FullPost from "@/widgets/FullPost/FullPost.vue";
 import Button from "@/shared/Button";
 import {useRouter} from "vue-router";
 
 const router = useRouter();
 
-const goToCreateRecord = (): void => {
-  router.push('add-new');
+const goBack = () => {
+  router.back();
 }
 </script>
 
 <template>
-  <div class="posts">
-    <div class="posts-header">
-      <Button label="Добавить" @click="goToCreateRecord"/>
+  <div class="read-container">
+    <div class="read-header">
+      <Button label="Назад" @click="goBack"/>
     </div>
-    <PostsList/>
+    <FullPost />
   </div>
 </template>
 
-<style lang="scss" scoped>
-.posts {
+<style scoped lang="scss">
+.read-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.posts-header {
+.read-header {
   display: flex;
   justify-content: end;
   width: 90%;

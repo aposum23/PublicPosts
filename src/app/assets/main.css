@@ -1,0 +1,30 @@
+:root {
+    --main-deep-teal: #03899C;
+    --main-sea-pine: #1F6B75;
+    --main-lagoon: #015965;
+    --main-aqua-sky: #36BBCE;
+    --main-soft-blue: #5FC0CE;
+    --aditional-blue-core: #1049A9;
+    --aditional-indi-blue: #29497F;
+    --aditional-midnight: #052C6E;
+    --aditional-sky-bolt: #4479D4;
+    --aditional-cool-wave: #6A92D4;
+    --aditional-neo-green: #00B64F;
+    --aditional-forest-tone: #22884F;
+    --aditional-deep-lead: #007633;
+    --aditional-mint-flash: #37DA7E;
+    --aditional-fresh-mint: #62DA97;
+}
+
+span, p, input, textarea {
+    color: var(--aditional-mint-flash);
+}
+
+h1, h2, h3, h4 {
+    color: var(--aditional-fresh-mint);
+}
+
+body {
+    background: linear-gradient(90deg, var(--main-deep-teal), var(--main-sea-pine), var(--main-lagoon));
+    font-size: 16px;
+}
