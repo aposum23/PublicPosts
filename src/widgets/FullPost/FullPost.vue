@@ -7,20 +7,21 @@ import {getRecord} from "@/widgets/FullPost/api/getRecord.ts";
 import type {IPost} from "@/utils/types/postTypes.ts";
 
 const route = useRoute();
-const record = ref<IPost>({});
+const record = ref<IPost>();
 
 onMounted(() => {
-  getRecord(route.params.recordId).then(({data}) => record.value = data);
+  getRecord(Number(route.params.recordId)).then(({data}) => record.value = data)
+      .catch((e) => console.error('Error in request:', e));
 });
 </script>
 
 <template>
   <div class="post-container">
     <div class="post-header">
-      <LoadedHeader :header="record.title"/>
+      <LoadedHeader :header="record?.title || ''"/>
     </div>
     <div class="post-content">
-      <LoadedText :text="record.body"/>
+      <LoadedText :text="record?.body || ''"/>
     </div>
   </div>
 </template>

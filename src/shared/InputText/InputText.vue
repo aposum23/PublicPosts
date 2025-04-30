@@ -20,7 +20,7 @@ const props = defineProps<{
   width: 80%;
 
   & input {
-    width: 90%;
+    width: 85%;
     border-radius: 6px;
     background: var(--aditional-cool-wave);
     padding: 10px;

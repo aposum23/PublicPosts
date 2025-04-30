@@ -12,7 +12,8 @@ const formData = ref<IPost>({
   userId: 1
 })
 const saveFormData = () => {
-  createNewRecord(formData.value).then(() => goBack());
+  createNewRecord(formData.value).then(() => goBack())
+      .catch((e) => console.error('Error in record creating:', e));
 }
 
 const router = useRouter();
